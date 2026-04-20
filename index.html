@@ -2,9 +2,26 @@
 <html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Caesar Wakanda | xXREAL</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
+    <!-- SEO & Metadata -->
+    <title>Caesar Wakanda | Architect of xXREAL & The Digital Nation</title>
+    <meta name="description" content="Discover Caesar Wakanda, the visionary creator of the xXREAL genre. Step into a digital nation where ancestral African polyrhythms meet stadium-level electronic structure.">
+    <meta name="keywords" content="Caesar Wakanda, xXREAL, Afrofuturism, African Music, Digital Nation, Decentralized Music, Afrobeats, Futuristic Audio, Global Sound, African Sciences">
+    
+    <!-- Open Graph / WhatsApp Preview -->
+    <meta property="og:title" content="Caesar Wakanda | xXREAL & The Digital Nation">
+    <meta property="og:description" content="The architect of the xXREAL genre. Fusing ancestral African polyrhythms with advanced electronic production. Moving without permission.">
+    <meta property="og:image" content="https://res.cloudinary.com/dfbweqelf/image/upload/q_auto/f_auto/v1776667305/Gemini_Generated_Image_j4lz8kj4lz8kj4lz_um07xv.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="https://caesarwakanda.com">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://res.cloudinary.com/dfbweqelf/image/upload/q_auto/f_auto/v1776667305/Gemini_Generated_Image_j4lz8kj4lz8kj4lz_um07xv.png">
+
     <!-- Fonts: Syncopate (Titles/Uppercase) & Lexend (Body/Sentence Case) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,9 +40,9 @@
                     colors: {
                         obsidian: '#050505',
                         void: '#0a0a0f',
-                        royalPurple: '#240046', /* Deep, luxurious foundation */
-                        neonPurple: '#7B2CBF',  /* Accent purple */
-                        gold: '#D4AF37',        /* Luxury metallic gold */
+                        royalPurple: '#240046', 
+                        neonPurple: '#7B2CBF',  
+                        gold: '#D4AF37',        
                         softGold: '#F3E5AB'
                     },
                     fontFamily: {
@@ -43,6 +60,7 @@
             color: #ffffff;
             font-family: 'Lexend', sans-serif;
             overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
         }
 
         /* Lethal Minimalist Background */
@@ -51,7 +69,7 @@
             top: 0;
             left: 0;
             width: 100vw;
-            height: 100vh;
+            height: 100dvh; /* Fixes iOS Safari address bar jump */
             background-image: 
                 radial-gradient(circle at center, transparent 0%, #050505 90%),
                 linear-gradient(rgba(212, 175, 55, 0.03) 1px, transparent 1px),
@@ -61,7 +79,7 @@
             pointer-events: none;
         }
 
-        /* Video Parallax Container - Brighter */
+        /* Video Parallax Container */
         .video-parallax-wrapper {
             position: absolute;
             top: -5%;
@@ -76,7 +94,6 @@
             content: '';
             position: absolute;
             inset: 0;
-            /* Subtle overlay to keep text legible while letting the video shine */
             background: linear-gradient(to bottom, rgba(5,5,5,0.1) 0%, rgba(5,5,5,0.4) 80%, #050505 100%);
         }
 
@@ -89,20 +106,26 @@
             transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .luxury-panel:hover {
-            border-color: rgba(212, 175, 55, 0.3); /* Gold border on hover */
-            box-shadow: 0 10px 40px rgba(36, 0, 70, 0.5); /* Royal purple shadow */
-            transform: translateY(-5px);
+        /* Hover effects disabled on touch devices for cleaner UX */
+        @media (hover: hover) and (pointer: fine) {
+            .luxury-panel:hover {
+                border-color: rgba(212, 175, 55, 0.3); 
+                box-shadow: 0 10px 40px rgba(36, 0, 70, 0.5); 
+                transform: translateY(-5px);
+            }
         }
 
         /* Minimalist Button System */
         .btn-luxury {
             background: transparent;
-            border: 1px solid rgba(212, 175, 55, 0.5); /* Gold */
+            border: 1px solid rgba(212, 175, 55, 0.5); 
             color: #D4AF37;
             transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
         }
         .btn-luxury::before {
             content: '';
@@ -111,20 +134,23 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(123, 44, 191, 0.15); /* Subtle purple fill */
+            background: rgba(123, 44, 191, 0.15); 
             transform: scaleX(0);
             transform-origin: right;
             transition: transform 0.4s ease;
             z-index: -1;
         }
-        .btn-luxury:hover {
-            border-color: #D4AF37;
-            box-shadow: 0 0 20px rgba(123, 44, 191, 0.4); /* Purple glow */
-            color: #FFFFFF;
-        }
-        .btn-luxury:hover::before {
-            transform: scaleX(1);
-            transform-origin: left;
+        
+        @media (hover: hover) and (pointer: fine) {
+            .btn-luxury:hover {
+                border-color: #D4AF37;
+                box-shadow: 0 0 20px rgba(123, 44, 191, 0.4); 
+                color: #FFFFFF;
+            }
+            .btn-luxury:hover::before {
+                transform: scaleX(1);
+                transform-origin: left;
+            }
         }
 
         /* Custom Scrollbar */
@@ -146,10 +172,12 @@
             transition: all 0.3s ease;
             border-bottom: 1px solid rgba(255,255,255,0.05);
         }
-        .track-row:hover {
-            background: linear-gradient(90deg, rgba(36,0,70,0.3) 0%, transparent 100%);
-            border-bottom: 1px solid rgba(212,175,55,0.3);
-            padding-left: 1rem;
+        @media (hover: hover) and (pointer: fine) {
+            .track-row:hover {
+                background: linear-gradient(90deg, rgba(36,0,70,0.3) 0%, transparent 100%);
+                border-bottom: 1px solid rgba(212,175,55,0.3);
+                padding-left: 1rem;
+            }
         }
     </style>
 </head>
@@ -157,8 +185,8 @@
 
     <div class="luxury-grid"></div>
 
-    <!-- Navigation (Syncopate Uppercase for Structural Links) -->
-    <nav class="fixed w-full z-50 bg-obsidian/80 backdrop-blur-xl border-b border-white/5 py-6 px-8 md:px-16 flex justify-between items-center transition-all duration-300">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-obsidian/80 backdrop-blur-xl border-b border-white/5 py-5 px-6 md:px-16 flex justify-between items-center transition-all duration-300">
         <div class="font-syncopate font-bold text-lg tracking-[0.3em] text-white flex items-center gap-4 uppercase cursor-pointer">
             <div class="w-2 h-2 bg-gold rotate-45 shadow-[0_0_10px_rgba(212,175,55,0.5)]"></div>
             CAESAR
@@ -166,46 +194,51 @@
         <div class="hidden md:flex gap-12 font-syncopate text-[10px] tracking-[0.2em] uppercase text-gray-400">
             <a href="#xxreal" class="hover:text-gold transition-colors">xXREAL</a>
             <a href="#catalog" class="hover:text-gold transition-colors">Catalog</a>
-            <a href="#vision" class="hover:text-gold transition-colors">The Vision</a>
-            <a href="#partnerships" class="hover:text-gold transition-colors">Partnerships</a>
+            <a href="#nation" class="hover:text-gold transition-colors">The Nation</a>
+            <a href="#access" class="hover:text-gold transition-colors">Access</a>
         </div>
-        <button class="md:hidden text-gold">
-            <i data-lucide="menu"></i>
+        <button id="mobile-menu-btn" class="md:hidden text-gold z-50 relative p-2" aria-label="Toggle Mobile Menu">
+            <i data-lucide="menu" id="menu-icon"></i>
         </button>
     </nav>
 
-    <!-- Hero Section (Smaller Text, Brighter Video) -->
-    <section id="hero" class="relative w-full min-h-screen flex flex-col justify-center items-center text-center px-6 pt-24 z-10">
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 bg-obsidian/95 backdrop-blur-2xl z-40 transform translate-x-full transition-transform duration-500 flex flex-col justify-center items-center gap-10 font-syncopate text-sm tracking-[0.3em] uppercase text-gray-400">
+        <a href="#xxreal" class="mobile-link hover:text-gold transition-colors">xXREAL</a>
+        <a href="#catalog" class="mobile-link hover:text-gold transition-colors">Catalog</a>
+        <a href="#nation" class="mobile-link hover:text-gold transition-colors">The Nation</a>
+        <a href="#access" class="mobile-link hover:text-gold transition-colors">Access</a>
+    </div>
+
+    <!-- Hero Section (Human First) -->
+    <section id="hero" class="relative w-full min-h-screen flex flex-col justify-center items-center text-center px-6 pt-24 z-10 overflow-hidden">
         
-        <!-- Video Layer - Brightness increased so the audience can "feast their eyes" -->
-        <div class="video-parallax-wrapper parallax-layer" data-speed="8">
+        <div class="video-parallax-wrapper scroll-parallax" data-scroll-speed="0.2">
             <video 
                 class="w-full h-full object-cover filter brightness-100 contrast-[1.05]"
-                autoplay loop muted playsinline>
+                autoplay loop muted playsinline aria-label="Caesar Wakanda Cinematic Stage Background">
                 <source src="https://res.cloudinary.com/dfbweqelf/video/upload/q_auto/f_auto/v1776667278/Image_Brought_to_Life_kzkesj.mp4" type="video/mp4">
             </video>
         </div>
         
-        <!-- Typography & UI -->
         <div class="relative z-10 w-full max-w-4xl mx-auto flex flex-col items-center parallax-layer" data-speed="15">
             
-            <div class="font-syncopate text-gold text-[10px] tracking-[0.5em] uppercase mb-8 border border-gold/20 px-6 py-2 rounded-full backdrop-blur-md bg-obsidian/30 shadow-[0_0_20px_rgba(36,0,70,0.6)]">
-                A New Era of Global Sound
-            </div>
-
-            <!-- Header Text Scaled Down for Elegance -->
             <h1 class="font-syncopate text-4xl md:text-5xl lg:text-6xl font-bold uppercase leading-tight tracking-[0.2em] text-white drop-shadow-[0_10px_20px_rgba(0,0,0,0.8)]">
                 CAESAR <br>WAKANDA
             </h1>
             
-            <!-- Lexend Sentence Case Body -->
-            <p class="font-lexend text-gray-200 font-light text-sm md:text-base max-w-xl mx-auto mt-8 mb-12 leading-relaxed drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
-                The architect of the xXREAL genre. Fusing ancestral African polyrhythms with stadium-level electronic production. A visionary ready for the global stage.
+            <p class="font-lexend text-gray-200 font-light text-sm md:text-base max-w-2xl mx-auto mt-8 mb-12 leading-relaxed drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+                It began as a sound. <br>
+                It is becoming a nation. <br><br>
+
+                Designed in Africa. <br>
+                Structured as xXREAL. <br>
+                Moving without permission.  
             </p>
             
             <div class="flex flex-col sm:flex-row gap-6 justify-center w-full sm:w-auto">
-                <a href="#catalog" class="btn-luxury px-10 py-4 font-syncopate text-[10px] tracking-[0.3em] uppercase rounded-sm flex justify-center items-center gap-3">
-                    Explore Catalog
+                <a href="#catalog" class="btn-luxury px-12 py-4 font-syncopate text-[10px] tracking-[0.4em] uppercase rounded-sm gap-3">
+                    Enter
                 </a>
             </div>
         </div>
@@ -215,33 +248,36 @@
         </div>
     </section>
 
-    <!-- xXREAL Philosophy Section (Purple & Gold Harmony) -->
+    <!-- xXREAL Section -->
     <section id="xxreal" class="relative w-full py-32 px-6 md:px-24 z-10 bg-gradient-to-b from-obsidian to-royalPurple/10">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-20 items-center max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center max-w-7xl mx-auto">
             <div class="order-2 md:order-1 relative group parallax-layer" data-speed="10">
                 <div class="absolute inset-0 bg-neonPurple opacity-5 filter blur-[120px] rounded-full"></div>
                 
-                <div class="luxury-panel p-12 md:p-16 rounded-xl relative z-10">
+                <div class="luxury-panel p-8 md:p-16 rounded-xl relative z-10 scroll-parallax" data-scroll-speed="-0.05">
                     <div class="font-syncopate text-[10px] tracking-[0.4em] uppercase text-gold mb-8 flex items-center gap-4">
                         <div class="w-8 h-px bg-gold"></div>
-                        Genre Definition
+                        The Architecture
                     </div>
                     
                     <h2 class="font-syncopate text-2xl md:text-3xl font-bold mb-8 text-white leading-tight uppercase tracking-wide">
-                        The Global Sound <br>of xXREAL
+                        The System <br>of xXREAL
                     </h2>
                     
                     <div class="space-y-6 font-lexend text-gray-400 leading-relaxed font-light text-sm">
                         <p>
-                            Caesar Wakanda doesn't just make music; he builds cultural infrastructures. The xXREAL genre is a highly marketable shift where organic African acoustics meet cinematic electronic production.
+                            xXREAL did not start as a genre. It started as a system.
                         </p>
                         <p>
-                            Designed for stadium tours and global chart dominance, this sound bridges the gap between commercial viability and deep artistic integrity. It offers record labels and international brands a sonic identity that is undeniably African yet universally resonant.
+                            A way of composing African rhythm into structure—precise, repeatable, alive. What began as sound has now formed a digital nation.
+                        </p>
+                        <p>
+                            Not a metaphor. A framework. Built through music, carried by people, expanding without borders.
                         </p>
                         <div class="mt-12 pt-8 border-t border-white/5 flex items-center gap-6">
-                            <div class="font-syncopate text-2xl text-gold">#1</div>
+                            <div class="font-syncopate text-2xl text-gold">15D</div>
                             <span class="font-lexend text-sm text-gray-500 font-light">
-                                Poised for global acclaim and Grammy consideration.
+                                Dimensional framework of the nation.
                             </span>
                         </div>
                     </div>
@@ -249,174 +285,191 @@
             </div>
             
             <div class="order-1 md:order-2 flex justify-center parallax-layer" data-speed="-5">
-                <!-- Minimalist Art Piece representing Purple/Gold synergy -->
-                <div class="w-64 h-64 border border-white/5 rounded-full relative flex items-center justify-center shadow-[0_0_80px_rgba(36,0,70,0.4)]">
-                    <div class="absolute w-48 h-48 border border-gold/20 rounded-full border-dashed animate-[spin_20s_linear_infinite]"></div>
-                    <div class="absolute w-32 h-32 bg-gradient-to-tr from-royalPurple to-transparent rounded-full filter blur-xl opacity-50"></div>
+                <div class="w-48 h-48 md:w-64 md:h-64 border border-white/5 rounded-full relative flex items-center justify-center shadow-[0_0_80px_rgba(36,0,70,0.4)] scroll-parallax" data-scroll-speed="0.1">
+                    <div class="absolute w-36 h-36 md:w-48 md:h-48 border border-gold/20 rounded-full border-dashed animate-[spin_20s_linear_infinite]"></div>
+                    <div class="absolute w-24 h-24 md:w-32 md:h-32 bg-gradient-to-tr from-royalPurple to-transparent rounded-full filter blur-xl opacity-50"></div>
                     <div class="w-3 h-3 bg-gold rounded-full shadow-[0_0_15px_#D4AF37]"></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Music Catalog (Lethal Minimalist) -->
+    <!-- Music Catalog -->
     <section id="catalog" class="relative w-full py-32 px-6 md:px-24 z-10 bg-obsidian border-y border-white/5">
-        <div class="max-w-5xl mx-auto">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-16 parallax-layer" data-speed="5">
+        <div class="max-w-5xl mx-auto scroll-parallax" data-scroll-speed="0.05">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 parallax-layer" data-speed="5">
                 <div>
-                    <div class="font-syncopate text-[10px] tracking-[0.4em] uppercase text-gold mb-4">Discography</div>
-                    <h2 class="font-syncopate text-3xl font-bold uppercase text-white tracking-widest">The Catalog</h2>
+                    <div class="font-syncopate text-[10px] tracking-[0.4em] uppercase text-gold mb-4">Official Discography</div>
+                    <h2 class="font-syncopate text-2xl md:text-3xl font-bold uppercase text-white tracking-widest">The Catalog</h2>
                 </div>
                 <p class="font-lexend text-sm text-gray-500 font-light max-w-xs mt-6 md:mt-0 text-left md:text-right">
-                    Viral-ready sonic textures engineered for massive playlists and global radio play.
+                    This was discovered before it was understood.
                 </p>
             </div>
 
             <div class="w-full">
-                <!-- Track 1 -->
+                <!-- Track 1: Make It -->
                 <div class="track-row py-6 flex flex-col md:flex-row md:items-center justify-between group cursor-pointer">
-                    <div class="flex items-center gap-8 w-full md:w-1/2">
-                        <span class="font-syncopate text-xs text-gray-600 w-8">01</span>
-                        <h4 class="font-lexend text-lg text-white group-hover:text-gold transition-colors font-medium">Vibranium Lullaby</h4>
+                    <div class="flex items-center gap-6 md:gap-8 w-full md:w-1/2">
+                        <span class="font-syncopate text-xs text-gray-600 w-6 md:w-8">01</span>
+                        <h4 class="font-lexend text-base md:text-lg text-white group-hover:text-gold transition-colors font-medium">Make It</h4>
                     </div>
-                    <div class="flex items-center justify-between w-full md:w-1/2 mt-4 md:mt-0">
-                        <span class="font-lexend text-sm text-gray-500 font-light">Lead Single / Focus Track</span>
-                        <div class="font-syncopate text-[10px] uppercase text-gold tracking-widest border border-gold/30 px-4 py-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
-                            Play Audio
-                        </div>
+                    <div class="flex items-center justify-between w-full md:w-1/2 mt-4 md:mt-0 pl-12 md:pl-0">
+                        <span class="font-lexend text-xs md:text-sm text-gray-500 font-light">Global Focus Track</span>
+                        <a href="https://onerpm.link/196170414219" target="_blank" rel="noopener noreferrer" class="font-syncopate text-[9px] md:text-[10px] uppercase text-gold tracking-widest border border-gold/30 px-4 py-2 rounded-full opacity-100 md:opacity-0 group-hover:opacity-100 transition-opacity hover:bg-gold hover:text-obsidian flex items-center gap-2">
+                            Play <i data-lucide="play" class="w-3 h-3"></i>
+                        </a>
                     </div>
                 </div>
 
-                <!-- Track 2 -->
+                <!-- Track 2: Inflation -->
                 <div class="track-row py-6 flex flex-col md:flex-row md:items-center justify-between group cursor-pointer">
-                    <div class="flex items-center gap-8 w-full md:w-1/2">
-                        <span class="font-syncopate text-xs text-gray-600 w-8">02</span>
-                        <h4 class="font-lexend text-lg text-white group-hover:text-gold transition-colors font-medium">Quantum Ancestors</h4>
+                    <div class="flex items-center gap-6 md:gap-8 w-full md:w-1/2">
+                        <span class="font-syncopate text-xs text-gray-600 w-6 md:w-8">02</span>
+                        <h4 class="font-lexend text-base md:text-lg text-white group-hover:text-gold transition-colors font-medium">Inflation</h4>
                     </div>
-                    <div class="flex items-center justify-between w-full md:w-1/2 mt-4 md:mt-0">
-                        <span class="font-lexend text-sm text-gray-500 font-light">Cinematic / Sync License</span>
-                        <div class="font-syncopate text-[10px] uppercase text-gold tracking-widest border border-gold/30 px-4 py-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
-                            Play Audio
-                        </div>
+                    <div class="flex items-center justify-between w-full md:w-1/2 mt-4 md:mt-0 pl-12 md:pl-0">
+                        <span class="font-lexend text-xs md:text-sm text-gray-500 font-light">xXREAL Architecture</span>
+                        <a href="https://onerpm.link/201142285568" target="_blank" rel="noopener noreferrer" class="font-syncopate text-[9px] md:text-[10px] uppercase text-gold tracking-widest border border-gold/30 px-4 py-2 rounded-full opacity-100 md:opacity-0 group-hover:opacity-100 transition-opacity hover:bg-gold hover:text-obsidian flex items-center gap-2">
+                            Play <i data-lucide="play" class="w-3 h-3"></i>
+                        </a>
                     </div>
                 </div>
 
-                <!-- Track 3 -->
+                <!-- Track 3: Siren -->
                 <div class="track-row py-6 flex flex-col md:flex-row md:items-center justify-between group cursor-pointer">
-                    <div class="flex items-center gap-8 w-full md:w-1/2">
-                        <span class="font-syncopate text-xs text-gray-600 w-8">03</span>
-                        <h4 class="font-lexend text-lg text-gray-400 group-hover:text-gold transition-colors font-medium">15th Dimension (Live)</h4>
+                    <div class="flex items-center gap-6 md:gap-8 w-full md:w-1/2">
+                        <span class="font-syncopate text-xs text-gray-600 w-6 md:w-8">03</span>
+                        <h4 class="font-lexend text-base md:text-lg text-white group-hover:text-gold transition-colors font-medium">Siren</h4>
                     </div>
-                    <div class="flex items-center justify-between w-full md:w-1/2 mt-4 md:mt-0">
-                        <span class="font-lexend text-sm text-gray-600 font-light">Stadium Recording</span>
-                        <div class="font-syncopate text-[10px] uppercase text-gold tracking-widest border border-gold/30 px-4 py-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
-                            Play Audio
-                        </div>
+                    <div class="flex items-center justify-between w-full md:w-1/2 mt-4 md:mt-0 pl-12 md:pl-0">
+                        <span class="font-lexend text-xs md:text-sm text-gray-500 font-light">Sonic Exploration</span>
+                        <a href="https://onerpm.link/206145164255" target="_blank" rel="noopener noreferrer" class="font-syncopate text-[9px] md:text-[10px] uppercase text-gold tracking-widest border border-gold/30 px-4 py-2 rounded-full opacity-100 md:opacity-0 group-hover:opacity-100 transition-opacity hover:bg-gold hover:text-obsidian flex items-center gap-2">
+                            Play <i data-lucide="play" class="w-3 h-3"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Track 4: Boi With A Big God -->
+                <div class="track-row py-6 flex flex-col md:flex-row md:items-center justify-between group cursor-pointer">
+                    <div class="flex items-center gap-6 md:gap-8 w-full md:w-1/2">
+                        <span class="font-syncopate text-xs text-gray-600 w-6 md:w-8">04</span>
+                        <h4 class="font-lexend text-base md:text-lg text-white group-hover:text-gold transition-colors font-medium">Boi With A Big God <span class="text-xs text-gray-500 block mt-1">(No Guide Line Out The Trenches)</span></h4>
+                    </div>
+                    <div class="flex items-center justify-between w-full md:w-1/2 mt-4 md:mt-0 pl-12 md:pl-0">
+                        <span class="font-lexend text-xs md:text-sm text-gray-500 font-light">Origin Narrative</span>
+                        <a href="https://track.collabhouse.com/caesarwakanda_boiwithabiggodnoguidelinesoutthetrenches" target="_blank" rel="noopener noreferrer" class="font-syncopate text-[9px] md:text-[10px] uppercase text-gold tracking-widest border border-gold/30 px-4 py-2 rounded-full opacity-100 md:opacity-0 group-hover:opacity-100 transition-opacity hover:bg-gold hover:text-obsidian flex items-center gap-2">
+                            Play <i data-lucide="play" class="w-3 h-3"></i>
+                        </a>
                     </div>
                 </div>
             </div>
             
             <div class="mt-16 text-center">
                 <a href="#" class="inline-flex items-center gap-4 font-syncopate text-[10px] text-gray-400 uppercase tracking-[0.3em] hover:text-gold transition-colors group">
-                    View Full Archive <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-2 transition-transform"></i>
+                    Listen Everywhere <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-2 transition-transform"></i>
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- The Vision / Image Parallax Section -->
-    <section id="vision" class="relative w-full py-40 px-6 md:px-24 z-10 bg-fixed bg-center bg-cover border-b border-white/5" style="background-image: url('https://res.cloudinary.com/dfbweqelf/image/upload/q_auto/f_auto/v1776667254/Gemini_Generated_Image_29jxte29jxte29jx_x4hmoi.png');">
-        <!-- Deep gradient overlay to blend seamlessly with the luxury aesthetic -->
-        <div class="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/80 to-royalPurple/40 backdrop-blur-[2px]"></div>
+    <!-- The Nation Section (iOS Optimized Parallax Layer) -->
+    <section id="nation" class="relative w-full py-40 px-6 md:px-24 z-10 border-b border-white/5 overflow-hidden bg-obsidian">
+        
+        <!-- Replacing bg-fixed with a JS-driven scroll parallax layer for perfect mobile UX -->
+        <div class="absolute inset-0 w-full h-[130%] -top-[15%] z-0 scroll-parallax" data-scroll-speed="0.2">
+            <img src="https://res.cloudinary.com/dfbweqelf/image/upload/q_auto/f_auto/v1776667254/Gemini_Generated_Image_29jxte29jxte29jx_x4hmoi.png" class="w-full h-full object-cover" alt="The Digital Nation">
+            <div class="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/80 to-royalPurple/40 backdrop-blur-[2px]"></div>
+        </div>
 
-        <div class="relative z-10 text-center mb-24 parallax-layer" data-speed="8">
+        <div class="relative z-10 text-center mb-16 md:mb-24 scroll-parallax" data-scroll-speed="-0.1">
             <h2 class="font-syncopate text-3xl md:text-4xl font-bold uppercase text-white mb-6 tracking-[0.2em] drop-shadow-[0_10px_20px_rgba(0,0,0,0.8)]">
-                A Grammy-Caliber <br>Vision
+                The Digital Nation
             </h2>
             <p class="font-lexend text-gray-300 font-light text-sm max-w-2xl mx-auto leading-relaxed drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
-                Backed by a highly engaged, decentralized fan ecosystem ("The Wakandan Nation"), Caesar Wakanda brings an unprecedented level of built-in community and cultural momentum to any global partnership.
+                This is not an audience. <br><br>
+                This is a digital nation moving in real time—connected through sound, aligned through frequency.
             </p>
         </div>
 
-        <div class="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <!-- Asset Card 1 -->
-            <div class="luxury-panel p-10 rounded-xl relative group parallax-layer" data-speed="5">
-                <i data-lucide="bar-chart-2" class="text-gold w-6 h-6 mb-8 opacity-70"></i>
-                <h3 class="font-syncopate font-bold text-sm tracking-[0.2em] mb-4 text-white uppercase">Commercial Viability</h3>
-                <p class="font-lexend text-xs text-gray-400 font-light leading-relaxed">High-retention streaming metrics and cross-genre appeal engineered for massive playlists and top-tier chart placement.</p>
+        <div class="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
+            <div class="luxury-panel p-8 md:p-10 rounded-xl relative group scroll-parallax" data-scroll-speed="0.05">
+                <i data-lucide="server" class="text-gold w-6 h-6 mb-8 opacity-70"></i>
+                <h3 class="font-syncopate font-bold text-sm tracking-[0.2em] mb-4 text-white uppercase">The Infrastructure</h3>
+                <p class="font-lexend text-xs text-gray-400 font-light leading-relaxed">Sound as foundation. Every release expands the system.</p>
             </div>
             
-            <!-- Asset Card 2 -->
-            <div class="luxury-panel p-10 rounded-xl relative group parallax-layer" data-speed="10">
-                <i data-lucide="film" class="text-neonPurple w-6 h-6 mb-8 opacity-70"></i>
-                <h3 class="font-syncopate font-bold text-sm tracking-[0.2em] mb-4 text-white uppercase">Sync & Licensing</h3>
-                <p class="font-lexend text-xs text-gray-400 font-light leading-relaxed">Cinematic, high-tension xXREAL tracks perfectly tailored for blockbuster film soundtracks and luxury brand campaigns.</p>
+            <div class="luxury-panel p-8 md:p-10 rounded-xl relative group scroll-parallax" data-scroll-speed="-0.02">
+                <i data-lucide="cpu" class="text-neonPurple w-6 h-6 mb-8 opacity-70"></i>
+                <h3 class="font-syncopate font-bold text-sm tracking-[0.2em] mb-4 text-white uppercase">The Architect</h3>
+                <p class="font-lexend text-xs text-gray-400 font-light leading-relaxed">Caesar Wakanda designs systems people step into.</p>
             </div>
 
-            <!-- Asset Card 3 -->
-            <div class="luxury-panel p-10 rounded-xl relative group parallax-layer" data-speed="7">
-                <i data-lucide="globe" class="text-gold w-6 h-6 mb-8 opacity-70"></i>
-                <h3 class="font-syncopate font-bold text-sm tracking-[0.2em] mb-4 text-white uppercase">The Fan Network</h3>
-                <p class="font-lexend text-xs text-gray-400 font-light leading-relaxed">A rabid, organized fanbase operating as a digital sovereign state. A built-in marketing engine generating organic momentum.</p>
+            <div class="luxury-panel p-8 md:p-10 rounded-xl relative group scroll-parallax" data-scroll-speed="0.08">
+                <i data-lucide="globe-2" class="text-gold w-6 h-6 mb-8 opacity-70"></i>
+                <h3 class="font-syncopate font-bold text-sm tracking-[0.2em] mb-4 text-white uppercase">The Citizens</h3>
+                <p class="font-lexend text-xs text-gray-400 font-light leading-relaxed">Listeners become participants. Participants become carriers of the nation.</p>
             </div>
         </div>
     </section>
 
-    <!-- Booking / Partnerships -->
-    <section id="partnerships" class="relative w-full py-40 px-6 md:px-24 z-10 bg-obsidian">
-        <div class="max-w-4xl mx-auto luxury-panel p-12 md:p-20 rounded-2xl relative parallax-layer" data-speed="5">
+    <!-- Access / Partnerships -->
+    <section id="access" class="relative w-full py-32 md:py-40 px-6 md:px-24 z-10 bg-obsidian">
+        <div class="max-w-4xl mx-auto luxury-panel p-8 md:p-20 rounded-2xl relative scroll-parallax" data-scroll-speed="0.05">
             
-            <div class="text-center mb-16">
-                <div class="font-syncopate text-[10px] tracking-[0.4em] uppercase text-gold mb-6">Connect</div>
+            <div class="text-center mb-12 md:mb-16">
+                <div class="font-syncopate text-[10px] tracking-[0.4em] uppercase text-gold mb-6">Partnerships</div>
                 <h2 class="font-syncopate text-2xl md:text-3xl font-bold mb-4 uppercase tracking-[0.2em] text-white">
-                    Global Partnerships
+                    Access
                 </h2>
-                <p class="font-lexend text-gray-500 font-light text-xs">Label Signings • Sync Licensing • Touring</p>
+                <p class="font-lexend text-gray-500 font-light text-xs">For those positioned to build within the system.</p>
             </div>
 
             <form class="space-y-8">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
                     <div class="space-y-3">
-                        <label class="font-syncopate text-[9px] text-gray-400 uppercase tracking-[0.3em]">Organization / Label</label>
-                        <input type="text" class="w-full bg-void border-b border-white/10 p-4 focus:outline-none focus:border-gold focus:bg-white/5 text-white transition-all duration-300 font-lexend text-sm font-light" placeholder="A&R / Exec / Brand Name">
+                        <label class="font-syncopate text-[9px] text-gray-400 uppercase tracking-[0.3em]">Name / Organization</label>
+                        <input type="text" class="w-full bg-void border-b border-white/10 p-4 focus:outline-none focus:border-gold focus:bg-white/5 text-white transition-all duration-300 font-lexend text-sm font-light rounded-none" placeholder="Who are we speaking with?">
                     </div>
                     <div class="space-y-3">
-                        <label class="font-syncopate text-[9px] text-gray-400 uppercase tracking-[0.3em]">Inquiry Type</label>
-                        <select class="w-full bg-void border-b border-white/10 p-4 focus:outline-none focus:border-gold focus:bg-white/5 text-gray-300 transition-all duration-300 appearance-none font-lexend text-sm font-light">
-                            <option>Record Label Signing</option>
-                            <option>Sync / Film / Brand Licensing</option>
-                            <option>Global Tour Booking</option>
-                            <option>Press / Grammy Consideration</option>
+                        <label class="font-syncopate text-[9px] text-gray-400 uppercase tracking-[0.3em]">Subject</label>
+                        <select class="w-full bg-void border-b border-white/10 p-4 focus:outline-none focus:border-gold focus:bg-white/5 text-gray-300 transition-all duration-300 appearance-none font-lexend text-sm font-light rounded-none">
+                            <option>General Connection</option>
+                            <option>Music / Label</option>
+                            <option>Live Booking</option>
+                            <option>Press</option>
                         </select>
                     </div>
                 </div>
-                <div class="space-y-3 mt-10">
-                    <label class="font-syncopate text-[9px] text-gray-400 uppercase tracking-[0.3em]">Proposal Details</label>
-                    <textarea rows="3" class="w-full bg-void border-b border-white/10 p-4 focus:outline-none focus:border-neonPurple focus:bg-white/5 text-white transition-all duration-300 resize-none font-lexend text-sm font-light" placeholder="Provide context for the partnership..."></textarea>
+                <div class="space-y-3 mt-8 md:mt-10">
+                    <label class="font-syncopate text-[9px] text-gray-400 uppercase tracking-[0.3em]">Message</label>
+                    <textarea rows="3" class="w-full bg-void border-b border-white/10 p-4 focus:outline-none focus:border-neonPurple focus:bg-white/5 text-white transition-all duration-300 resize-none font-lexend text-sm font-light rounded-none" placeholder="How can we build together?"></textarea>
                 </div>
                 
-                <button type="button" class="w-full mt-12 py-5 btn-luxury font-syncopate text-[10px] tracking-[0.4em] uppercase font-bold rounded-sm flex justify-center items-center gap-4">
-                    Submit Inquiry <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                <button type="button" class="w-full mt-10 md:mt-12 py-5 btn-luxury font-syncopate text-[10px] tracking-[0.4em] uppercase font-bold rounded-sm flex justify-center items-center gap-4">
+                    Proceed <i data-lucide="arrow-right" class="w-4 h-4"></i>
                 </button>
             </form>
         </div>
     </section>
 
-    <!-- Footer bridging to the Digital Nation -->
+    <!-- Footer / The Deeper Layer -->
     <footer class="relative w-full border-t border-white/5 py-24 px-6 text-center z-10 bg-void">
-        <div class="max-w-3xl mx-auto mb-16">
-            <h3 class="font-syncopate font-bold text-xl md:text-2xl text-white tracking-[0.3em] mb-8 uppercase">The Wakandan Ecosystem</h3>
+        <div class="max-w-3xl mx-auto mb-16 scroll-parallax" data-scroll-speed="0.1">
+            <h3 class="font-syncopate font-bold text-xl md:text-2xl text-white tracking-[0.3em] mb-8 uppercase">The Digital Nation</h3>
             <p class="font-lexend text-gray-500 font-light text-sm mb-12 leading-relaxed">
-                Beyond the music lies a highly organized, monetizable digital sovereign state driven by the fans. This powerful protocol ensures unbreakable loyalty and global momentum.
+                The visible layer is only the surface.<br>
+                The deeper architecture is not announced.<br>
+                It is entered.
             </p>
             
-            <a href="#" class="inline-flex items-center justify-center gap-4 px-12 py-5 bg-transparent border border-white/10 text-white font-syncopate text-[10px] tracking-[0.4em] uppercase hover:border-gold hover:text-gold transition-all duration-500 rounded-sm">
-                Explore Fan Protocol
+            <a href="#" class="btn-luxury px-12 py-5 font-syncopate text-[10px] tracking-[0.4em] uppercase rounded-sm border-white/20 text-white hover:border-gold hover:text-gold">
+                Enter
             </a>
         </div>
         
         <p class="font-syncopate text-[9px] text-gray-600 uppercase tracking-[0.4em]">
-            &copy; 2026 Caesar Wakanda. Global Sound Architecture.
+            &copy; 2026 Caesar Wakanda.
         </p>
     </footer>
     
@@ -425,34 +478,90 @@
         // Initialize Lucide Icons
         lucide.createIcons();
 
-        // ---- Minimalist JavaScript Parallax Engine ----
-        // Smooth, performant mouse-tracking parallax tailored for high-end luxury feel
+        // ---- Mobile Navigation Logic ----
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+        let isMenuOpen = false;
+
+        menuBtn.addEventListener('click', () => {
+            isMenuOpen = !isMenuOpen;
+            if (isMenuOpen) {
+                mobileMenu.classList.remove('translate-x-full');
+                mobileMenu.classList.add('translate-x-0');
+                menuIcon.setAttribute('data-lucide', 'x');
+            } else {
+                mobileMenu.classList.add('translate-x-full');
+                mobileMenu.classList.remove('translate-x-0');
+                menuIcon.setAttribute('data-lucide', 'menu');
+            }
+            lucide.createIcons(); 
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                isMenuOpen = false;
+                mobileMenu.classList.add('translate-x-full');
+                mobileMenu.classList.remove('translate-x-0');
+                menuIcon.setAttribute('data-lucide', 'menu');
+                lucide.createIcons();
+            });
+        });
+
+        // ---- Intelligent Parallax Engine (Desktop + Mobile Optimized) ----
         
-        document.addEventListener('mousemove', (e) => {
-            const mouseX = e.clientX;
-            const mouseY = e.clientY;
-            
-            const xOffset = (window.innerWidth / 2 - mouseX) / 100;
-            const yOffset = (window.innerHeight / 2 - mouseY) / 100;
+        // 1. Mouse Parallax (Runs ONLY on desktop to prevent mobile tap glitches)
+        const isDesktop = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
 
-            const layers = document.querySelectorAll('.parallax-layer');
-            layers.forEach(layer => {
-                const speed = layer.getAttribute('data-speed') || 5;
-                const x = xOffset * speed;
-                const y = yOffset * speed;
+        if (isDesktop) {
+            document.addEventListener('mousemove', (e) => {
+                const mouseX = e.clientX;
+                const mouseY = e.clientY;
                 
-                layer.style.transition = 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)';
-                layer.style.transform = `translate(${x}px, ${y}px)`;
-            });
-        });
+                const xOffset = (window.innerWidth / 2 - mouseX) / 100;
+                const yOffset = (window.innerHeight / 2 - mouseY) / 100;
 
-        document.addEventListener('mouseleave', () => {
-            const layers = document.querySelectorAll('.parallax-layer');
-            layers.forEach(layer => {
-                layer.style.transition = 'transform 1s cubic-bezier(0.16, 1, 0.3, 1)';
-                layer.style.transform = `translate(0px, 0px)`;
+                const layers = document.querySelectorAll('.parallax-layer');
+                layers.forEach(layer => {
+                    const speed = layer.getAttribute('data-speed') || 5;
+                    const x = xOffset * speed;
+                    const y = yOffset * speed;
+                    
+                    layer.style.transition = 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)';
+                    layer.style.transform = `translate(${x}px, ${y}px)`;
+                });
             });
-        });
+
+            document.addEventListener('mouseleave', () => {
+                const layers = document.querySelectorAll('.parallax-layer');
+                layers.forEach(layer => {
+                    layer.style.transition = 'transform 1s cubic-bezier(0.16, 1, 0.3, 1)';
+                    layer.style.transform = `translate(0px, 0px)`;
+                });
+            });
+        }
+
+        // 2. Scroll Parallax (Runs smoothly on ALL devices, including iOS)
+        const scrollParallaxLayers = document.querySelectorAll('.scroll-parallax');
+        
+        window.addEventListener('scroll', () => {
+            requestAnimationFrame(() => {
+                scrollParallaxLayers.forEach(layer => {
+                    // Get element's position relative to viewport
+                    const rect = layer.parentElement.getBoundingClientRect();
+                    
+                    // Only animate if element is somewhat near/in the viewport
+                    if (rect.top < window.innerHeight && rect.bottom > 0) {
+                        const speed = parseFloat(layer.getAttribute('data-scroll-speed')) || 0.1;
+                        // Calculate movement based on scroll distance from screen center
+                        const yOffset = (rect.top - (window.innerHeight / 2)) * speed;
+                        
+                        layer.style.transform = `translate3d(0, ${yOffset}px, 0)`;
+                    }
+                });
+            });
+        }, { passive: true }); // passive flag optimizes scrolling performance on mobile
     </script>
 </body>
 </html>
